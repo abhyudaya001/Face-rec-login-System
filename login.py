@@ -2,6 +2,7 @@
 import cgi
 from base64 import b64decode
 import face_recognition
+import mysql.connector
 formData = cgi.FieldStorage()
 face_match=0
 
@@ -13,7 +14,21 @@ data = b64decode(encoded)
 
 with open("image.png", "wb") as f:
     f.write(data)
-
+conn = mysql.connector.connect(user='root',password='',host='localhost',database='minip')
+if conn:
+    print(email);
+    query = "SELECT * FROM user WHERE email="+email+";"
+    cursor = conn.cursor()
+    cursor.execute(query)
+    resultData = cursor.fetchall()
+    if len(resultData) == 0:
+        print("Content-Type: text/html")
+        print()
+        print('<script>')
+        print('alert("University rno not found. /r/n Please enter correct university rollno");')
+        print("window.open('test.html','_parent');")
+        print('</script>')
+        
 got_image = face_recognition.load_image_file("image.png")
 
 existing_image = face_recognition.load_image_file("students/"+email+".jpg")
@@ -33,7 +48,18 @@ print("Content-Type: text/html")
 print()
 
 if(face_match==1):
-    print("<script>alert('welcome ",email," ')</script>")
+    print("<script>window.location.replace('welcome.html')</script>")
 else:
     print("<script>alert('face not recognized')</script>")
 
+# import subprocess
+
+# def php(script_path):
+#     p = subprocess.Popen(['php', script_path], stdout=subprocess.PIPE)
+#     result = p.communicate()[0]
+#     return result
+
+# # YOUR CODE BELOW:
+# page_html = "<h1>News and Updates</h1>"
+# news_script_output = php("news-generator.php") 
+# print page_html + news_script_output
