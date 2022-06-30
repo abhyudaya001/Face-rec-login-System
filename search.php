@@ -2,7 +2,7 @@
 $conn=mysqli_connect("localhost","root","","minip");
 $name=$_GET['q'];
 
-$sql="Select fname,lname,gender,email from user where fname='$name'";
+$sql="Select fname,lname,gender,email from emp where fname='$name'";
 
 $result = $conn->query($sql);
 $lastname="abhyu";

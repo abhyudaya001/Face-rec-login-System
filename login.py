@@ -16,8 +16,8 @@ with open("image.png", "wb") as f:
     f.write(data)
 conn = mysql.connector.connect(user='root',password='',host='localhost',database='minip')
 if conn:
-    print(email);
-    query = "SELECT * FROM user WHERE email="+email+";"
+    # print(email);
+    query ="SELECT * FROM emp WHERE PID='"+email+"';"
     cursor = conn.cursor()
     cursor.execute(query)
     resultData = cursor.fetchall()
@@ -25,8 +25,8 @@ if conn:
         print("Content-Type: text/html")
         print()
         print('<script>')
-        print('alert("University rno not found. /r/n Please enter correct university rollno");')
-        print("window.open('test.html','_parent');")
+        print('alert("Please ");')
+        print("window.open('login.html','_parent');")
         print('</script>')
         
 got_image = face_recognition.load_image_file("image.png")
