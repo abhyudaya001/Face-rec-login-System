@@ -9,28 +9,23 @@
     <title>Login</title>
 </head>
 <body onload="init()">
-<nav class="navbar text-white navbar-dark bg-dark">
-<a href="#" class="navbar-brand">
-Login 
-</a>
-</nav>
-     <p>
-
-    </p>
-    <div class="container text-center bordered" style="width:280px">
-    <form action="login.py" method="post" enctype="multipart/form-data">
-    <video onclick="snapshot(this);" width=250 height=250 id="video" controls autoplay></video>
-    <br>
-    <input type="text" placeholder="User Name" name="email" class="form-control form-control-sm text-left">
-    <br>
-    <input type="text" accept="image/png" hidden name="current_image" id="current_image">
-       <button  onclick="login()" class="btn-dark" value="login">Login </button>
+   <nav class="navbar text-white navbar-dark bg-dark">
+   Login 
+   </nav>
+       <div class="container text-center bordered" style="width:280px">
+       <form action="login.py" method="post" enctype="multipart/form-data">
+       <video onclick="snapshot(this);" width=250 height=250 id="video" controls autoplay></video>
        <br>
+       <input type="text" placeholder="User Name" name="email" class="form-control form-control-sm text-left">
        <br>
-    </form>
-    </div>
-      <canvas  id="myCanvas" width="400" height="350" hidden></canvas>  
-  </body>
+       <input type="text" accept="image/png" hidden name="current_image" id="current_image">
+          <button  onclick="login()" class="btn-dark" value="login">Login </button>
+          <br>
+          <br>
+       </form>
+       </div>
+         <canvas  id="myCanvas" width="400" height="350" hidden></canvas>  
+     </body>
   <script>
       //--------------------
       // GET USER MEDIA CODE

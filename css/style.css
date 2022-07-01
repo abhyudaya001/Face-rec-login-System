@@ -34,9 +34,9 @@ body{
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-.container {
+/* .container {
   padding: 30px 50px;
-}
+} */
 #search-form {
   width: 30%;
   margin: 0 auto;
@@ -68,15 +68,77 @@ body{
   text-align: center;
   font-size: 0.75rem;
 }
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 2rem;
+  border: none;
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+/* .styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+} */
 
-@media (max-width: 1200px) {
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+/* .styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+} */
+/* @media (max-width: 1200px) {
   #search-form { width: 50%; }
 }
 @media (max-width: 768px) {
   .container { padding: 30px 35px; }
   #search-form { width: 100%; }
   .info { font-size: 0.5rem; }
+} */
+
+table{
+  border: solid;
+  background-color: aliceblue;
+  border-radius: 0.5rem;
 }
+
+
+.container{
+  background-color: azure;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+#video{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: solid;
+  border-color: darkgray;
+  border-radius: 3rem;
+}
+#my_camera{
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+}
+
+
+
+
+
 
 
 

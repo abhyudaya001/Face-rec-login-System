@@ -21,6 +21,9 @@ if conn:
     cursor = conn.cursor()
     cursor.execute(query)
     resultData = cursor.fetchall()
+    cursor.execute("DELETE FROM session");
+    cursor.execute("INSERT INTO session values('"+email+"');")
+    conn.commit()
     if len(resultData) == 0:
         print("Content-Type: text/html")
         print()
@@ -48,7 +51,7 @@ print("Content-Type: text/html")
 print()
 
 if(face_match==1):
-    print("<script>window.location.replace('welcome.html')</script>")
+    print("<script>window.location.replace('welcome.php')</script>")
 else:
     print("<script>alert('face not recognized')</script>")
 
